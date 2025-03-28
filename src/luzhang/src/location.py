@@ -46,6 +46,7 @@ class Orange:
 
     def orange_callback(self, msg):
         cx, cy, depth = msg.x, msg.y, msg.z
+        depth += 0.02
 
         if depth <= 0 or np.isnan(depth):
             rospy.logwarn("no depth")
@@ -74,6 +75,7 @@ class Orange:
         y_map = y_robot + X_base * np.sin(theta_robot) + Y_base * np.cos(theta_robot)
         
         y_map += 1.0
+        x_map -= 0.05
 
         point_msg = PointStamped()
         point_msg.header.stamp = rospy.Time.now()
