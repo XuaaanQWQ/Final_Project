@@ -1,0 +1,9 @@
+<launch>
+    <node name="gmapping" pkg="gmapping" type="slam_gmapping" output="screen">
+        <param name="base_frame" value="base_link" />
+        <param name="map_update_interval" value="3.0" />
+        <remap from="scan" to="/scan" />
+    </node>
+    <node name="numm" pkg="luzhang" type="numm.py" output="screen" />
+</launch>
+
