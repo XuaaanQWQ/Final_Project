@@ -57,7 +57,7 @@ class Orange:
         x_map = x_robot + X_base * np.cos(theta_robot) - Y_base * np.sin(theta_robot)
         y_map = y_robot + X_base * np.sin(theta_robot) + Y_base * np.cos(theta_robot)
 
-        y_map += 2.0  
+        y_map += 1.0  
 
         point_msg = PointStamped()
         point_msg.header.stamp = rospy.Time.now()
